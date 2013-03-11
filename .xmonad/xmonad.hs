@@ -17,6 +17,13 @@ import qualified Data.Map        as M
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 
+-- http://www.linuxandlife.com/2012/01/xmonad-pidgin.html
+import XMonad.Layout.Spacing
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.IM
+import XMonad.Layout.Grid
+import Data.Ratio ((%))
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -43,7 +50,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9:chat"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -169,7 +176,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts (onWorkspace "9:chat" pidginLayout $ tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -182,6 +189,10 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+
+     --http://www.linuxandlife.com/2012/01/xmonad-pidgin.html
+     gridLayout = spacing 8 $ Grid
+     pidginLayout = withIM (18/100) (Role "buddy_list") gridLayout
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -199,10 +210,12 @@ myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
+    [ className =? "Pidgin"         --> doShift "9:chat"
+    , className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
+
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
