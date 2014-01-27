@@ -21,7 +21,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -66,10 +66,10 @@
 
 ;; Jabber
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(jabber-auto-reconnect t)
  '(jabber-avatar-verbose nil)
  '(jabber-vcard-avatars-retrieve nil)
@@ -86,7 +86,7 @@
 ;; http://stackoverflow.com/a/4725727
 ;; TODO: Fix, not working with ssh aliases
 ;;(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'"
-;"/ssh:%h:"))))
+                                        ;"/ssh:%h:"))))
 
 ;; linum
 
@@ -96,3 +96,110 @@
 ;; Set chrome as the default browser
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
+
+;; js2
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; tweak js2 intentation
+;; http://feeding.cloud.geek.nz/posts/proper-indentation-of-javascript-files/
+(custom-set-variables
+ '(js2-basic-offset 4)
+ '(js2-bounce-indent-p t)
+ )
+
+;; Jedi
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+
+;; Duplicate line
+;; http://stackoverflow.com/a/88828
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  )
+(global-set-key (kbd "C-d") 'duplicate-line)
+
+;; Reload buffers from disk
+;; http://stackoverflow.com/a/1481706
+(global-auto-revert-mode t)
+
+;; expand region
+(global-set-key (kbd "C-=") 'er/expand-region)
+(delete-selection-mode 1)
+
+;; emmet (zen coding)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css
+
+;; custom bindings
+(defun ansi-term-default ()
+  (interactive)
+  (ansi-term "/bin/bash"))
+(global-set-key (kbd "C-x a") 'ansi-term-default)
+
+;; custom movement
+;; Move more quickly (http://whattheemacsd.com/)
+(global-set-key (kbd "C-s-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "C-s-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-s-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-s-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
+
+
+;; move lines (whattheemacsd.com)
+(defun move-line-down ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines 1))
+    (forward-line)
+    (move-to-column col)))
+
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (move-to-column col)))
+
+(global-set-key (kbd "<C-s-up>") 'move-line-up)
+(global-set-key (kbd "<C-s-down>") 'move-line-down)
+
+;; Visit a buffer in a lower split
+(defun visit-buffer-below ()
+  (interactive)
+  (split-window-below)
+  (other-window 1)
+  (ido-switch-buffer)
+)
+(global-set-key (kbd "C-x n") 'visit-buffer-below)
+
+;; Visit a buffer in a right split
+(defun visit-buffer-right ()
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (ido-switch-buffer)
+)
+(global-set-key (kbd "C-x C-n") 'visit-buffer-right)
