@@ -220,3 +220,20 @@
   (jump-to-register :magit-fullscreen))
 
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+;; Functions topen lines above and below with indenting (vim-ish)
+(defun add-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (previous-line)
+  (indent-for-tab-command))
+
+(defun add-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "C-c O") 'add-line-above)
+(global-set-key (kbd "C-c o") 'add-line-below)
