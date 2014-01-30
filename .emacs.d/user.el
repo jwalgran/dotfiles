@@ -219,7 +219,7 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
-;; Functions topen lines above and below with indenting (vim-ish)
+;; Functions to open lines above and below with indenting (vim-ish)
 (defun add-line-above ()
   (interactive)
   (beginning-of-line)
