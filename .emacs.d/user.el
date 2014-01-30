@@ -203,3 +203,6 @@
   (ido-switch-buffer)
 )
 (global-set-key (kbd "C-x C-n") 'visit-buffer-right)
+
+;; bind ace-jump-mode
+(global-set-key (kbd "C-x C-a") 'ace-jump-mode)
