@@ -219,8 +219,6 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
-(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
 ;; Functions topen lines above and below with indenting (vim-ish)
 (defun add-line-above ()
   (interactive)
