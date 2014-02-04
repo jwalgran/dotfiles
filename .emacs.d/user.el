@@ -37,6 +37,12 @@
 ;; (set-face-attribute 'default nil :height 140)
 (load-theme 'tomorrow-night-bright t)
 
+;; Fonts
+(when (window-system)
+  (set-frame-font "Source Code Pro")
+  (set-face-attribute 'default nil :font "Source Code Pro" :height 140)
+  (set-face-font 'default "Source Code Pro"))
+
 ;; Flyspell often slows down editing so it's turned off
 (remove-hook 'text-mode-hook 'turn-on-flyspell)
 
@@ -250,3 +256,8 @@
     (insert (format-time-string format))))
 
 (global-set-key (kbd "C-c d") 'insert-date)
+
+;; Don't show messages that will never be read
+;; http://bzg.fr/emacs-strip-tease.html
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
