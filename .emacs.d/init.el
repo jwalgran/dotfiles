@@ -36,6 +36,7 @@
                       yaml-mode
                       yasnippet
                       multiple-cursors
+                      dired-details+
                       )
   "A list of packages to ensure are installed at launch.")
 

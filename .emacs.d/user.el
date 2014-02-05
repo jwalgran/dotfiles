@@ -258,6 +258,10 @@
 (global-set-key (kbd "C-c d") 'insert-date)
 
 ;; Don't show messages that will never be read
+
 ;; http://bzg.fr/emacs-strip-tease.html
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
+
+;; dired-details+
+(require 'dired-details+)
