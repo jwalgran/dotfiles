@@ -112,11 +112,6 @@
  '(js2-bounce-indent-p t)
  )
 
-;; Jedi
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-
 ;; Duplicate line
 ;; http://stackoverflow.com/a/88828
 (defun duplicate-line()

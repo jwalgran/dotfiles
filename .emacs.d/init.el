@@ -23,7 +23,6 @@
                       emmet-mode
                       expand-region
                       jabber
-                      jedi
                       js2-mode
                       json-mode
                       magit
