@@ -36,6 +36,7 @@
                       yasnippet
                       multiple-cursors
                       dired-details+
+                      wrap-region
                       )
   "A list of packages to ensure are installed at launch.")
 
