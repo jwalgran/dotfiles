@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#http://nixmeal.wordpress.com/2012/07/24/copypaste-text-in-urxvt-rxvt-unicode-using-keyboard/
+
+BASEDIR=$(dirname $0)
+
+apt-get install xclip
+mkdir -p /usr/lib/urxvt/perl
+cp $BASEDIR/urxvtclip /usr/lib/urxvt/perl/clipboard
