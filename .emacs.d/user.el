@@ -264,3 +264,29 @@
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-mini)
 
+;; Cocoa Development
+(setq cc-other-file-alist
+
+      `(("\\.cpp$" (".hpp" ".h"))
+        ("\\.h$" (".c" ".cpp" ".m" ".mm"))
+        ("\\.hpp$" (".cpp" ".c"))
+        ("\\.m$" (".h"))
+        ("\\.mm$" (".h"))
+        ))
+(add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "C-c o") 'ff-find-other-file)))
+
+(require 'anything)
+(require 'anything-config)
+
+(defvar anything-c-source-objc-headline
+  '((name . "Objective-C Headline")
+    (headline  "^[-+@]\\|^#pragma mark")))
+
+(defun objc-headline ()
+  (interactive)
+  ;; Set to 500 so it is displayed even if all methods are not narrowed down.
+  (let ((anything-candidate-number-limit 500))
+    (anything-other-buffer '(anything-c-source-objc-headline)
+                           "*ObjC Headline*")))
+
+(global-set-key "\C-xp" 'objc-headline)
