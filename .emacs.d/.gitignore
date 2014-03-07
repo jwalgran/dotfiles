@@ -4,6 +4,9 @@ places
 url
 .mc-lists.el
 
+jabber-history
+session.*
+
 # Created by http://www.gitignore.io
 
 ### Emacs ###
