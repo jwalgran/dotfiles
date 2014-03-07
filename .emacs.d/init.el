@@ -37,6 +37,7 @@
                       multiple-cursors
                       dired-details+
                       wrap-region
+                      helm
                       )
   "A list of packages to ensure are installed at launch.")
 
