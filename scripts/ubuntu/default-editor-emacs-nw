@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/emacs-nw 2
+sudo update-alternatives --set editor /usr/local/bin/emacs-nw
