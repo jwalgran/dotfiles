@@ -339,3 +339,7 @@
 (global-set-key (kbd "C-x a") 'visit-ansi-term)
 
 
+;; exec-path-from-shell properly sets up the environment for GUI emacs
+;; https://github.com/purcell/exec-path-from-shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))

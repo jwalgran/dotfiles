@@ -41,6 +41,7 @@
                       auto-complete
                       helm
                       notify
+                      exec-path-from-shell
                       )
   "A list of packages to ensure are installed at launch.")
 
