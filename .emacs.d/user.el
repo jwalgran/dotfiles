@@ -224,8 +224,8 @@
   (interactive "P")
   (let ((format (cond
                  ((not prefix) "%Y-%m-%d")
-                 ((equal prefix '(4)) "%A, %B %d %Y")
-                 ((equal prefix '(16)) "%A, %d. %B %Y")))
+                 ((equal prefix '(4)) "%Y-%m-%d %A")
+                 ((equal prefix '(16)) "%A, %B %d %Y")))
         (system-time-locale "en_US"))
     (insert (format-time-string format))))
 
