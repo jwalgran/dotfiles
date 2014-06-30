@@ -70,35 +70,6 @@
 ;; Save here instead of littering current directory with emacs backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-;; Jabber
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(jabber-auto-reconnect t)
- '(jabber-avatar-verbose nil)
- '(jabber-vcard-avatars-retrieve nil)
- '(jabber-chat-buffer-format "*-jabber-%n-*")
- '(jabber-history-enabled t)
- '(jabber-mode-line-mode t)
- '(jabber-roster-buffer "*-jabber-*")
- '(jabber-roster-line-format " %c %-25n %u %-8s")
- '(jabber-show-offline-contacts t))
-
-;; Jabber notifications using notify.el
-(require 'notify)
-(defun notify-jabber-notify (from buf text proposed-alert)
-  "(jabber.el hook) Notify of new Jabber chat messages via notify.el"
-  (when (or jabber-message-alert-same-buffer
-            (not (memq (selected-window) (get-buffer-window-list buf))))
-    (if (jabber-muc-sender-p from)
-        (notify (format "(PM) %s"
-                       (jabber-jid-displayname (jabber-jid-user from)))
-               (format "%s: %s" (jabber-jid-resource from) text)))
-      (notify (format "%s" (jabber-jid-displayname from))
-             text)))
-(add-hook 'jabber-alert-message-hooks 'notify-jabber-notify)
 
 ;; Tramp
 
