@@ -28,7 +28,6 @@
                       markdown-mode
                       nginx-mode
                       nodejs-repl
-                      prodigy
                       scala-mode
                       undo-tree
                       yaml-mode
@@ -38,8 +37,6 @@
                       wrap-region
                       anything
                       auto-complete
-                      helm
-                      exec-path-from-shell
                       js2-refactor
                       )
   "A list of packages to ensure are installed at launch.")
