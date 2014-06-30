@@ -185,7 +185,7 @@
 (global-set-key (kbd "C-x C-n") 'visit-buffer-right)
 
 ;; bind ace-jump-mode
-(global-set-key (kbd "C-x C-a") 'ace-jump-mode)
+(global-set-key (kbd "C-.") 'ace-jump-mode)
 
 ;; full screen magit-status (http://whattheemacsd.com/)
 (defadvice magit-status (around magit-fullscreen activate)
