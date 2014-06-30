@@ -42,6 +42,7 @@
                       helm
                       notify
                       exec-path-from-shell
+                      js2-refactor
                       )
   "A list of packages to ensure are installed at launch.")
 
