@@ -6,7 +6,8 @@ url
 
 jabber-history
 session.*
-
+bookmarks
+g
 # Created by http://www.gitignore.io
 
 ### Emacs ###
