@@ -39,6 +39,7 @@
                       auto-complete
                       js2-refactor
                       projectile
+                      key-chord
                       )
   "A list of packages to ensure are installed at launch.")
 
