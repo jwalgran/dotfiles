@@ -319,3 +319,7 @@
 ;; js2 Refactor
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-c C-r")
+
+
+;; projectile - https://github.com/bbatsov/projectile
+(projectile-global-mode)

@@ -38,6 +38,7 @@
                       anything
                       auto-complete
                       js2-refactor
+                      projectile
                       )
   "A list of packages to ensure are installed at launch.")
 
