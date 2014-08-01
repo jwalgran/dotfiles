@@ -323,3 +323,12 @@
 
 ;; projectile - https://github.com/bbatsov/projectile
 (projectile-global-mode)
+
+
+;; smartparens - https://github.com/Fuco1/smartparens
+(require 'smartparens-config)
+
+
+;; rainbow-delimiters
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)

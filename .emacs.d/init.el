@@ -39,6 +39,8 @@
                       auto-complete
                       js2-refactor
                       projectile
+                      smartparens
+                      rainbow-delimiters
                       )
   "A list of packages to ensure are installed at launch.")
 
