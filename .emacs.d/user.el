@@ -333,3 +333,16 @@
 (key-chord-define-global "qq" 'projectile-find-file)
 (key-chord-define-global "qw" 'projectile-switch-project)
 (key-chord-mode +1)
+
+
+;; Show the name of the current function in the mode line
+;; http://emacsredux.com/blog/2014/04/05/which-function-mode/
+(which-function-mode)
+;;;; Uncomment this block to show the function name in the header
+;;
+;;(setq-default header-line-format
+;;              '((which-func-mode ("" which-func-format " "))))
+;;(setq mode-line-misc-info
+;;            We remove Which Function Mode from the mode line, because it's mostly
+;;            invisible here anyway.
+;;            (assq-delete-all 'which-func-mode mode-line-misc-info))
