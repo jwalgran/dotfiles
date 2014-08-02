@@ -346,3 +346,12 @@
 ;;            We remove Which Function Mode from the mode line, because it's mostly
 ;;            invisible here anyway.
 ;;            (assq-delete-all 'which-func-mode mode-line-misc-info))
+
+
+;; smartparens - https://github.com/Fuco1/smartparens
+(require 'smartparens-config)
+
+
+;; rainbow-delimiters
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
