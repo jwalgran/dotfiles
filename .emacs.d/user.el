@@ -355,3 +355,8 @@
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
+
+
+;;yasnippet
+(add-to-list 'yas/root-directory "$HOME/.emacs.d/snippets/AndreaCrotti/yasnippet-snippets")
+(yas-global-mode 1)
