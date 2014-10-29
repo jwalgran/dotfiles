@@ -110,6 +110,9 @@
   )
 (global-set-key (kbd "C-d") 'duplicate-line)
 
+;; fiplr - https://github.com/d11wtq/fiplr
+(global-set-key (kbd "C-,") 'fiplr-find-file)
+
 ;; Reload buffers from disk
 ;; http://stackoverflow.com/a/1481706
 (global-auto-revert-mode t)

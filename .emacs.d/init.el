@@ -42,6 +42,7 @@
                       key-chord
                       smartparens
                       rainbow-delimiters
+                      fiplr
                       )
   "A list of packages to ensure are installed at launch.")
 
