@@ -335,6 +335,11 @@
 (key-chord-define-global "jl" 'ace-jump-line-mode)
 (key-chord-define-global "qq" 'projectile-find-file)
 (key-chord-define-global "qw" 'projectile-switch-project)
+(key-chord-define-global ",." 'undo)
+(key-chord-define-global "cv" 'reindent-then-newline-and-indent)
+(key-chord-define-global "4r" "$")
+(key-chord-define-global "xc" 'dabbrev-expand)
+(key-chord-define-global "zx" 'fiplr-find-file)
 (key-chord-mode +1)
 
 
