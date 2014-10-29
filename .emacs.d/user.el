@@ -97,6 +97,9 @@
  '(js2-bounce-indent-p t)
  )
 
+;; React JSX files are .js with special syntax sugar
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+
 ;; Duplicate line
 ;; http://stackoverflow.com/a/88828
 (defun duplicate-line()
