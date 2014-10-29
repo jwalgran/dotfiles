@@ -113,6 +113,9 @@
 ;; fiplr - https://github.com/d11wtq/fiplr
 (global-set-key (kbd "C-,") 'fiplr-find-file)
 
+;; rgrep
+(global-set-key (kbd "C-;") 'rgrep)
+
 ;; Reload buffers from disk
 ;; http://stackoverflow.com/a/1481706
 (global-auto-revert-mode t)
