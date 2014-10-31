@@ -8,6 +8,14 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p) ;; Single letter yes/no
 
+(use-package smex
+  :demand t
+  :bind ("M-x" . smex)
+  :init
+  (progn
+    (setq smex-save-file (concat user-emacs-directory ".smex-items"))
+    (smex-initialize)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Modeline
 

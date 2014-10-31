@@ -3,3 +3,4 @@
 .emacs.d/.cask
 .emacs.d/.mc-lists.el
 .emacs.d/autosaves
+.emacs.d/auto-save-list

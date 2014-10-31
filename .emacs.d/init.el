@@ -8,7 +8,7 @@
 
 (use-package use-package
   :config (setq use-package-verbose t)
-  :bind ("C-c k" . describe-personal-keybindings))
+  :bind ("C-c C-k" . describe-personal-keybindings))
 
 (add-to-list 'load-path "~/.emacs.d")
 (require 'config)
