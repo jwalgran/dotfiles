@@ -132,7 +132,8 @@
   :bind (("C-s-n" . fast-next)
          ("C-s-p" . fast-previous)
          ("C-s-f" . fast-forward)
-         ("C-s-b" . fast-backward)))
+         ("C-s-b" . fast-backward)
+         ("C-a"   . smart-start-of-line)))
 
 (use-package util
   :bind ("C-c C-d" . duplicate-line))
