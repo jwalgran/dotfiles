@@ -78,8 +78,6 @@
          ("C-x C-b" . helm-buffers-list)))
 
 
-(provide 'modes)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Paredit
 
@@ -90,3 +88,24 @@
     (add-hook 'lisp-mode-hook             'enable-paredit-mode)
     (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
     (add-hook 'scheme-mode-hook           'enable-paredit-mode)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; key-chord
+
+(use-package key-chord
+  :init
+  (progn
+    (key-chord-define-global "jk" 'ace-jump-word-mode)
+    (key-chord-define-global "jj" 'ace-jump-char-mode)
+    (key-chord-define-global "jl" 'ace-jump-line-mode)
+    (key-chord-define-global "qq" 'projectile-find-file)
+    (key-chord-define-global "qw" 'projectile-switch-project)
+    (key-chord-define-global ",." 'undo)
+    (key-chord-define-global "cv" 'reindent-then-newline-and-indent)
+    (key-chord-define-global "4r" "$")
+    (key-chord-define-global "xc" 'hippie-expand)
+    (key-chord-define-global "zx" 'fiplr-find-file)
+    (key-chord-mode +1)))
+
+
+(provide 'modes)
