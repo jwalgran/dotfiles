@@ -32,6 +32,12 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Frame
 
+(use-package maxframe
+  :demand t
+  :init
+  (progn
+    (add-hook 'window-setup-hook 'maximize-frame t)))
+
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)

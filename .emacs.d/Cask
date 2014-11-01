@@ -32,6 +32,7 @@
 (depends-on "key-chord")
 (depends-on "magit")
 (depends-on "markdown-mode")
+(depends-on "maxframe")
 (depends-on "multiple-cursors")
 (depends-on "nginx-mode")
 (depends-on "pallet")
