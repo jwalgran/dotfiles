@@ -94,6 +94,7 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Whitespace
 
 (setq-default tab-width 4)
@@ -121,6 +122,7 @@
   :init
   (progn
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Navigation Within Buffers
 
@@ -180,8 +182,6 @@
     (yas-global-mode 1)
     (add-hook 'term-mode-hook (lambda()
                                 (setq yas-dont-activate t)))))
-
-
 
 (delete-selection-mode 1)
 
