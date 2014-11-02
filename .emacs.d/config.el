@@ -121,7 +121,6 @@
   :init
   (progn
     ;; turn on maximum syntax highlighting
-    (require 'font-lock)
     (setq font-lock-maximum-decoration t)
     (global-font-lock-mode t)))
 
