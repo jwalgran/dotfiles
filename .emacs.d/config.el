@@ -220,6 +220,21 @@
   :demand t
   :init
   (progn
+    ;; https://github.com/ahinz/emacs-config/blob/7e025076097f045aea2a0aedd0523ee996753346/.emacs.d/ah-modes.el#L268
+    (defun open-named-term (new-buffer-name cmd &rest switches)
+      (setq term-ansi-buffer-name (generate-new-buffer-name new-buffer-name))
+      (setq term-ansi-buffer-name (apply 'make-term term-ansi-buffer-name cmd nil switches))
+      (set-buffer term-ansi-buffer-name)
+      (term-mode)
+      (term-char-mode)
+      (term-set-escape-char ?\C-x)
+      (switch-to-buffer term-ansi-buffer-name))
+
+    ;; https://github.com/ahinz/emacs-config/blob/7e025076097f045aea2a0aedd0523ee996753346/.emacs.d/ah-modes.el#L268
+    (defun open-term (name)
+      (interactive "sName: ")
+      (open-named-term name "/bin/bash"))
+
     (defun visit-ansi-term ()
       "If the current buffer is:
          1) a running ansi-term named *ansi-term*, rename it.
@@ -255,7 +270,9 @@
             (kill-buffer buffer))
         ad-do-it))
     (ad-activate 'term-sentinel))
-  :bind ("C-x a" . visit-ansi-term))
+
+  :bind (("C-x a" . visit-ansi-term)
+         ("C-x C-a" . open-term)))
 
 
 (provide 'config)
