@@ -56,6 +56,7 @@
 (make-directory "~/.emacs.d/backups/" t)
 
 (use-package dired
+  :defer t
   :init
   (progn
     (use-package dired-details+
@@ -65,6 +66,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; File Finding
 
 (use-package fiplr
+  :defer t
   :bind ("C-," . fiplr-find-file))
 
 (use-package projectile

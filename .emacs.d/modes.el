@@ -16,6 +16,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; js2
 
 (use-package js2-mode
+  :defer t
   :init
   (progn
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -32,6 +33,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; js2-refactor
 
 (use-package js2-refactor
+  :defer t
   :init
   (progn
     (js2r-add-keybindings-with-prefix "C-c C-r")))
@@ -50,7 +52,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Magit
 
 (use-package magit
-  :demand t
+  :defer t
   :init
   (progn
     ;; full screen magit-status (http://whattheemacsd.com/)
@@ -63,10 +65,8 @@
       "Restores the previous window configuration and kills the magit buffer"
       (interactive)
       (kill-buffer)
-      (jump-to-register :magit-fullscreen))
-
-    (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
-
+      (jump-to-register :magit-fullscreen)))
+  :config (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
   :bind ("C-c g" . magit-status))
 
 
@@ -82,6 +82,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Paredit
 
 (use-package paredit
+  :defer t
   :init
   (progn
     (add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
