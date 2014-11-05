@@ -150,6 +150,9 @@
 (use-package util
   :bind ("C-c C-d" . duplicate-line))
 
+(use-package paragraphs
+  :bind (("M-n" . forward-paragraph)
+         ("M-p" . backward-paragraph)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Editing
 
