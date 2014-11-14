@@ -2,7 +2,7 @@
 
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
-
+(setq initial-major-mode 'text-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Minibuffer
 
