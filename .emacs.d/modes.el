@@ -26,6 +26,15 @@
      '(js2-basic-offset 4)
      '(js2-bounce-indent-p t))
 
+    ;; convert the word "function" to "λ"
+    ;; https://github.com/ahinz/emacs-config/blob/e04cda76030f7adaacfff0706a267a7c3d71c010/.emacs.d/ah-modes.el#L183
+    (font-lock-add-keywords
+     'js2-mode `(("\\(function\\) *("
+                  (0 (progn (compose-region (match-beginning 1)
+                                            (match-end 1) ?λ)
+                            nil)))))
+
+
     ;; React JSX files are .js with special syntax sugar
     (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))))
 
