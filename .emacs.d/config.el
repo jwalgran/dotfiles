@@ -195,6 +195,8 @@
 
 (delete-selection-mode 1)
 
+(use-package fill
+  :bind (("C-c f" . fill-paragraph)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Buffers
 
