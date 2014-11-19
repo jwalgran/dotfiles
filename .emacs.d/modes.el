@@ -128,3 +128,16 @@
    ("C->"         . mc/mark-next-like-this)
    ("C-<"         . mc/mark-previous-like-this)
    ("C-c C-<"     . mc/mark-all-like-this)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
+
+(use-package markdown
+  :init
+  (progn
+    (defun markdown-preview-file ()
+      "run Marked on the current file and revert the buffer"
+      (interactive)
+      (shell-command
+       (format "open -a \"/Applications/Marked 2.app\" %s"
+               (shell-quote-argument (buffer-file-name))))))
+  :bind (("C-c m" . markdown-preview-file)))
