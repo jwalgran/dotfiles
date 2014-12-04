@@ -141,3 +141,10 @@
        (format "open -a \"/Applications/Marked 2.app\" %s"
                (shell-quote-argument (buffer-file-name))))))
   :bind (("C-c m" . markdown-preview-file)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; flycheck
+
+(use-package flycheck
+  :config
+  (progn
+    (add-hook 'after-init-hook 'global-flycheck-mode)))
