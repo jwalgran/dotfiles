@@ -148,3 +148,10 @@
   :config
   (progn
     (add-hook 'after-init-hook 'global-flycheck-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo-tree
+
+(use-package undo-tree
+  :init
+  (progn
+    (global-undo-tree-mode)))
