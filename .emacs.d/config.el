@@ -210,6 +210,28 @@
 (use-package fill
   :bind (("C-c f" . fill-paragraph)))
 
+(global-set-key "\C-q" 'backward-kill-word)
+
+(defun endless/comment-line-or-region (n)
+  "Comment or uncomment current line and leave point after it.
+With positive prefix, apply to N lines including current one.
+With negative prefix, apply to -N lines above.
+If region is active, apply to active region instead."
+  (interactive "p")
+  (if (use-region-p)
+      (comment-or-uncomment-region
+       (region-beginning) (region-end))
+    (let ((range
+           (list (line-beginning-position)
+                 (goto-char (line-end-position n)))))
+      (comment-or-uncomment-region
+       (apply #'min range)
+       (apply #'max range)))
+    (forward-line 1)
+    (back-to-indentation)))
+
+(global-set-key (kbd "C-;") 'endless/comment-line-or-region)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Buffers
 
 (use-package buffers
@@ -219,7 +241,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Searching
 
-(global-set-key (kbd "C-;") 'rgrep)
+(global-set-key (kbd "C-'") 'rgrep)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Shell
@@ -290,6 +312,14 @@
 
   :bind (("C-x a" . visit-ansi-term)
          ("C-x C-a" . open-term)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Other
+
+;; https://sites.google.com/site/steveyegge2/effective-emacs
+(global-set-key "\C-x\C-m" 'smex)
+(global-set-key "\C-c\C-m" 'smex)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (provide 'config)

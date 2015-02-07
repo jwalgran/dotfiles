@@ -118,8 +118,6 @@
     (key-chord-mode +1)))
 
 
-(provide 'modes)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; multiple-cursors
 
 (use-package multiple-cursors
@@ -144,10 +142,22 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; flycheck
 
+(defun flycheck-list-errors-only-when-errors ()
+  (interactive)
+  (if flycheck-current-errors
+      (flycheck-list-errors)
+    (-when-let (buffer (get-buffer flycheck-error-list-buffer))
+      (dolist (window (get-buffer-window-list buffer))
+        (quit-window nil window)))))
+
 (use-package flycheck
   :config
   (progn
+    (setq flycheck-disabled-checkers '(html-tidy))
     (add-hook 'after-init-hook 'global-flycheck-mode)))
+
+;;;; Add this to run flycheck on every save
+;;(add-hook 'before-save-hook 'flycheck-list-errors-only-when-errors)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo-tree
 
@@ -155,3 +165,38 @@
   :init
   (progn
     (global-undo-tree-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; browse-kill-ring
+
+(use-package browse-kill-ring
+  :bind
+  (("C-M-y" . browse-kill-ring)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; sr-speedbar
+
+(use-package sr-speedbar
+  :init
+  (progn
+    (setq speedbar-use-images nil)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; bbyac
+
+(use-package bbyac
+  :init
+  (progn
+    (bbyac-global-mode 1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; projectile
+
+(use-package projectile
+  :init
+  (progn
+    (setq magit-repo-dirs (mapcar (lambda (dir)
+                                    (substring dir 0 -1))
+                                  (remove-if-not (lambda (project)
+                                                   (file-directory-p (concat project "/.git/")))
+                                                 (projectile-relevant-known-projects))))
+    (setq magit-repo-dirs-depth 1)))
+
+(provide 'modes)
+;;; modes ends here
