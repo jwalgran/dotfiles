@@ -10,6 +10,6 @@
   :config (setq use-package-verbose t)
   :bind ("C-c C-k" . describe-personal-keybindings))
 
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'config)
 (require 'modes)
