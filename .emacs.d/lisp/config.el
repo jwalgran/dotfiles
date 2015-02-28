@@ -200,7 +200,6 @@
 (use-package yasnippet
   :init
   (progn
-    (add-to-list 'yas/root-directory "$HOME/.emacs.d/snippets/")
     (yas-global-mode 1)
     (add-hook 'term-mode-hook (lambda()
                                 (setq yas-dont-activate t)))))
