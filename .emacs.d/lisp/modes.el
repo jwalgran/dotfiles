@@ -1,3 +1,11 @@
+;;; modes.el --- Mode-specific Emacs setup
+
+;;; Commentary:
+
+;; Configure installed packages
+
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ido / imenu
 
 (ido-mode t)

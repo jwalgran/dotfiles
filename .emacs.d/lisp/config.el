@@ -1,3 +1,11 @@
+;;; config.el --- General Emacs setup
+
+;;; Commentary:
+
+;; Set up perfered defaults and general editing functionality.
+
+;;; Code:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Scratch Buffer
 
 (setq initial-scratch-message "")
@@ -319,3 +327,4 @@ If region is active, apply to active region instead."
 
 
 (provide 'config)
+;;; config.el ends here
