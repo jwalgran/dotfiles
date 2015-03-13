@@ -199,12 +199,26 @@
 (use-package projectile
   :init
   (progn
-    (setq magit-repo-dirs (mapcar (lambda (dir)
-                                    (substring dir 0 -1))
-                                  (remove-if-not (lambda (project)
-                                                   (file-directory-p (concat project "/.git/")))
-                                                 (projectile-relevant-known-projects))))
-    (setq magit-repo-dirs-depth 1)))
+    (setq magit-repo-dirs
+          (mapcar
+           (lambda (dir)
+             (substring dir 0 -1))
+           (cl-remove-if-not
+            (lambda (project)
+              (unless (file-remote-p project)
+                (file-directory-p (concat project "/.git/"))))
+            (projectile-relevant-known-projects))))
+    (setq magit-repo-dirs-depth 1)
+    (setq magit-completing-read-function 'magit-ido-completing-read)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; scripty-client
+
+(use-package scripty-client
+  :bind
+  (("C-0" . scripty)))
+
+
+
 
 (provide 'modes)
 ;;; modes ends here
