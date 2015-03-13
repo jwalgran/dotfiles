@@ -65,6 +65,7 @@
 (depends-on "s")
 (depends-on "sbt-mode")
 (depends-on "scala-mode2")
+(depends-on "scripty-client" :git "http://github.com/steventlamb/scripty-client.el.git")
 (depends-on "scss-mode")
 (depends-on "skewer-mode")
 (depends-on "smartparens")
