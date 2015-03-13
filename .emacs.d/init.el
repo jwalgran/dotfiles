@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 
-;; Built on these foudational tools:
+;; Built on these foundational tools:
 
 ;;  Cask: Manage the config as an elisp project
 ;;  https://github.com/cask/cask
