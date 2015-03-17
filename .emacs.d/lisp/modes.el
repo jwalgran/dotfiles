@@ -232,6 +232,12 @@
   (("C-0" . scripty)))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; clojure-mode
+
+(use-package clojure-mode
+  :init
+  (progn
+    (add-hook 'clojure-mode-hook #'paredit-mode)))
 
 
 (provide 'modes)
