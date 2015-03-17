@@ -92,7 +92,21 @@
 (use-package helm
   :demand t
   :bind (("C-c h" . helm-mini)
-         ("C-x C-b" . helm-buffers-list)))
+         ("C-x C-b" . helm-buffers-list))
+  :init
+  (progn
+    ;; config from http://www.reddit.com/r/emacs/comments/2z7nbv/lean_helm_window/
+    (setq helm-display-header-line nil) ;; t by default
+    (helm-autoresize-mode 1)
+    (setq helm-autoresize-max-height 30)
+    (setq helm-autoresize-min-height 30)
+    (setq helm-split-window-in-side-p t)
+    (defun helm-toggle-header-line ()
+      (if (= (length helm-sources) 1)
+          (set-face-attribute 'helm-source-header nil :height 0.1)
+        (set-face-attribute 'helm-source-header nil :height 1.0)))
+
+    (add-hook 'helm-before-initialize-hook 'helm-toggle-header-line)))
 
 
 
