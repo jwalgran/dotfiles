@@ -97,7 +97,6 @@
   (progn
     ;; config from http://www.reddit.com/r/emacs/comments/2z7nbv/lean_helm_window/
     (setq helm-display-header-line nil) ;; t by default
-    (helm-autoresize-mode 1)
     (setq helm-autoresize-max-height 30)
     (setq helm-autoresize-min-height 30)
     (setq helm-split-window-in-side-p t)
