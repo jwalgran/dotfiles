@@ -82,8 +82,23 @@
       "Restores the previous window configuration and kills the magit buffer"
       (interactive)
       (kill-buffer)
-      (jump-to-register :magit-fullscreen)))
-  :config (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+      (jump-to-register :magit-fullscreen))
+
+    ;; http://endlessparentheses.com/easily-create-github-prs-from-magit.html
+    (defun endless/visit-pull-request-url ()
+      "Visit the current branch's PR on Github."
+      (interactive)
+      (browse-url
+       (format "https://github.com/%s/compare/%s?expand=1"
+               (replace-regexp-in-string
+                "\\`.+github\\.com:\\(.+\\)\\.git\\'" "\\1"
+                (magit-get "remote"
+                           (magit-get-current-remote)
+                           "url"))
+               (magit-get-current-branch))))
+
+    (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+    (define-key magit-mode-map (kbd "V") 'endless/visit-pull-request-url))
   :bind ("C-c g" . magit-status))
 
 
