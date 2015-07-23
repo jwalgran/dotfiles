@@ -20,6 +20,13 @@
       ido-max-prospects 10)
 (set-default 'imenu-auto-rescan t)
 
+(require 'flx-ido)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flex-matching t)
+;;;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; js2
 
