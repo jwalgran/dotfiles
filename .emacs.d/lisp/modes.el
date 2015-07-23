@@ -237,7 +237,7 @@
 (use-package projectile
   :init
   (progn
-    (setq magit-repo-dirs
+    (setq magit-repository-directories
           (mapcar
            (lambda (dir)
              (substring dir 0 -1))
