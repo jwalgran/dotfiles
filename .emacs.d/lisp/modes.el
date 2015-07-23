@@ -39,7 +39,8 @@
     ;; http://feeding.cloud.geek.nz/posts/proper-indentation-of-javascript-files/
     (custom-set-variables
      '(js2-basic-offset 4)
-     '(js2-bounce-indent-p t))
+     '(js2-bounce-indent-p t)
+     '(js2-auto-indent-flag f))
 
     ;; convert the word "function" to "λ"
     ;; https://github.com/ahinz/emacs-config/blob/e04cda76030f7adaacfff0706a267a7c3d71c010/.emacs.d/ah-modes.el#L183
