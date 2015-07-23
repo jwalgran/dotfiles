@@ -149,9 +149,11 @@
 (use-package key-chord
   :init
   (progn
-    (key-chord-define-global "jk" 'ace-jump-word-mode)
-    (key-chord-define-global "jj" 'ace-jump-char-mode)
-    (key-chord-define-global "jl" 'ace-jump-line-mode)
+    (key-chord-define-global "jk" 'avy-goto-word-or-subword-1)
+    (key-chord-define-global "jj" 'avy-goto-char)
+    (key-chord-define-global "jl" 'avy-goto-line)
+    (key-chord-define-global "fj" 'helm-buffers-list)
+    (key-chord-define-global "fk" 'ido-find-file)
     (key-chord-define-global "qq" 'projectile-find-file)
     (key-chord-define-global "qw" 'mc/edit-lines)
     (key-chord-define-global ",." 'undo)
