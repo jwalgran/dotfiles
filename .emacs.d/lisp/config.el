@@ -12,6 +12,18 @@
 ; https://github.com/lewang/flx#gc-optimization
 (setq gc-cons-threshold 20000000)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Styling
+
+(set-face-background 'mode-line "black")
+(set-face-attribute 'mode-line nil :box "#222" :underline nil :overline nil)
+
+(set-face-background 'modeline-inactive "black")
+(set-face-attribute 'modeline-inactive nil :box "#222" :underline nil :overline nil)
+
+(fringe-mode 0)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Scratch Buffer
 
 (setq initial-scratch-message "")
