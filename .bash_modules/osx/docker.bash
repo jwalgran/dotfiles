@@ -1,2 +1,2 @@
 # Assumes boot2docker
-export DOCKER_HOST=tcp://127.0.0.1:4243
+eval "$(boot2docker shellinit 2> /dev/null)"
