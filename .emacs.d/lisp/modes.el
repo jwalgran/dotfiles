@@ -265,5 +265,14 @@
 ;;                 (cljr-add-keybindings-with-prefix "C-c C-n")))))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; agressive-indent
+
+(use-package aggressive-indent
+  :init
+  (progn
+    (global-aggressive-indent-mode 1)
+    (add-to-list 'aggressive-indent-excluded-modes 'html-mode)))
+
+
 (provide 'modes)
 ;;; modes ends here

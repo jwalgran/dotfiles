@@ -5,6 +5,7 @@
 (depends-on "4clojure")
 (depends-on "ace-jump-mode")
 (depends-on "ace-window")
+(depends-on "aggressive-indent")
 (depends-on "anaconda-mode")
 (depends-on "anything")
 (depends-on "async")
