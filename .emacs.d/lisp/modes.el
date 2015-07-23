@@ -253,7 +253,8 @@
 
 (use-package scripty-client
   :bind
-  (("C-0" . scripty)))
+  (("C-0" . scripty)
+   ("C-9" . scripty/rerun)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; clojure-mode
