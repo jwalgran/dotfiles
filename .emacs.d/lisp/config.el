@@ -6,6 +6,12 @@
 
 ;;; Code:
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Memory
+
+; https://github.com/lewang/flx#gc-optimization
+(setq gc-cons-threshold 20000000)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Scratch Buffer
 
 (setq initial-scratch-message "")
