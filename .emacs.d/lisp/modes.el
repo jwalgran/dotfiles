@@ -274,5 +274,22 @@
     (add-to-list 'aggressive-indent-excluded-modes 'html-mode)))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; quickrun
+
+(use-package quickrun
+  :init
+  (progn
+    (quickrun-add-command "jrnl"
+                          '((:command . "jrnl")
+                            (:exec . ("%c < %s"))
+                            (:default-directory . "/tmp")))
+
+    (quickrun-add-command "markdown/doku"
+                          '((:command . "pandoc")
+                            (:exec . "%c --from=markdown --to=dokuwiki %o %s %a")
+                            (:default-directory . "/tmp"))
+                          :mode 'markdown-mode)))
+
+
 (provide 'modes)
 ;;; modes ends here
