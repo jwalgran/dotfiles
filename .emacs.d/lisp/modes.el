@@ -98,8 +98,7 @@
 
 (use-package helm
   :demand t
-  :bind (("C-c h" . helm-mini)
-         ("C-x C-b" . helm-buffers-list))
+  :bind (("C-x C-b" . helm-mini))
   :init
   (progn
     ;; config from http://www.reddit.com/r/emacs/comments/2z7nbv/lean_helm_window/
@@ -112,7 +111,13 @@
           (set-face-attribute 'helm-source-header nil :height 0.1)
         (set-face-attribute 'helm-source-header nil :height 1.0)))
 
-    (add-hook 'helm-before-initialize-hook 'helm-toggle-header-line)))
+    (add-hook 'helm-before-initialize-hook 'helm-toggle-header-line)
+
+    (semantic-mode 1)
+    (require 'helm-config)
+    (global-set-key (kbd "C-c h") 'helm-command-prefix)))
+
+
 
 
 
