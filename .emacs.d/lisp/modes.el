@@ -98,7 +98,8 @@
 
 (use-package helm
   :demand t
-  :bind (("C-x C-b" . helm-mini))
+  :bind (("C-x C-b" . helm-mini)
+         ("C-c h w" . helm-swoop))
   :init
   (progn
     ;; config from http://www.reddit.com/r/emacs/comments/2z7nbv/lean_helm_window/
