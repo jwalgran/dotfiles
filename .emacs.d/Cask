@@ -23,6 +23,7 @@
 (depends-on "csharp-mode")
 (depends-on "dash")
 (depends-on "dired-details+")
+(depends-on "dockerfile-mode")
 (depends-on "drag-stuff")
 (depends-on "edit-server")
 (depends-on "edn")
