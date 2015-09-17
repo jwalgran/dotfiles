@@ -20,6 +20,10 @@
       ido-max-prospects 10)
 (set-default 'imenu-auto-rescan t)
 
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
 (require 'flx-ido)
 (ido-everywhere 1)
 (flx-ido-mode 1)
