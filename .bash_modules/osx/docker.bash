@@ -1,3 +1,12 @@
 # Assumes boot2docker
-eval "$(boot2docker shellinit 2> /dev/null)"
-alias b2d=boot2docker
+alias dm=docker-machine
+
+function dme () {
+    if [ -z "$1" ]
+    then
+        machine="default"
+    else
+        machine=$1
+    fi
+    eval "$(docker-machine env $machine)"
+}
