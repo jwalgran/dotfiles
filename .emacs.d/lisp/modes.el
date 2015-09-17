@@ -300,5 +300,13 @@
                           :mode 'markdown-mode)))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; tramp / vagrant-tramp
+
+(use-package tramp
+  :init
+  (progn
+    (vagrant-tramp-enable)))
+
+
 (provide 'modes)
 ;;; modes ends here

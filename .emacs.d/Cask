@@ -97,6 +97,7 @@
 (depends-on "swiper")
 (depends-on "undo-tree")
 (depends-on "use-package")
+(depends-on "vagrant-tramp")
 (depends-on "web-mode")
 (depends-on "window-numbering")
 (depends-on "with-editor")
