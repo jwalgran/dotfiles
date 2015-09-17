@@ -151,6 +151,7 @@
     (key-chord-define-global "4r" "$")
     (key-chord-define-global "xc" 'hippie-expand)
     (key-chord-define-global "zx" 'fiplr-find-file)
+    (key-chord-define-global "dk" 'smex)
     (key-chord-mode +1)))
 
 
