@@ -160,13 +160,33 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; multiple-cursors
+;; Reference: http://endlessparentheses.com/multiple-cursors-keybinds.html
 
 (use-package multiple-cursors
+  :init
+  (progn
+    (define-prefix-command 'endless/mc-map)
+
+    (define-key ctl-x-map "m" 'endless/mc-map)
+
+    (define-key endless/mc-map "i" #'mc/insert-numbers)
+    (define-key endless/mc-map "h" #'mc-hide-unmatched-lines-mode)
+    (define-key endless/mc-map "a" #'mc/mark-all-like-this)
+
+    (define-key endless/mc-map "d"
+      #'mc/mark-all-symbols-like-this-in-defun)
+    (define-key endless/mc-map "r" #'mc/reverse-regions)
+    (define-key endless/mc-map "s" #'mc/sort-regions)
+    (define-key endless/mc-map "l" #'mc/edit-lines)
+    (define-key endless/mc-map "\C-a"
+      #'mc/edit-beginnings-of-lines)
+    (define-key endless/mc-map "\C-e"
+      #'mc/edit-ends-of-lines))
   :bind
   (("C-S-c C-S-c" . mc/edit-lines)
    ("C->"         . mc/mark-next-like-this)
    ("C-<"         . mc/mark-previous-like-this)
-   ("C-c C-<"     . mc/mark-all-like-this)))
+   ("C-S-c C->"   . mc/mark-all-like-this-dwim)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; markdown
 
