@@ -205,11 +205,6 @@
   :bind (("M-i" . change-inner)
          ("M-o" . change-outer)))
 
-(use-package drag-stuff
-  :init
-  (progn
-    (drag-stuff-global-mode t)))
-
 (use-package clock
   :bind ("C-c d" . insert-date))
 
