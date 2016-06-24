@@ -21,8 +21,8 @@
 (set-face-background 'modeline-inactive "black")
 (set-face-attribute 'modeline-inactive nil :box "#222" :underline nil :overline nil)
 
-(fringe-mode 0)
-
+;; nil uses the default fringe values
+(fringe-mode nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Scratch Buffer
 

@@ -215,7 +215,8 @@
   :config
   (progn
     (setq flycheck-disabled-checkers '(html-tidy))
-    (add-hook 'after-init-hook 'global-flycheck-mode)))
+    (add-hook 'after-init-hook 'global-flycheck-mode)
+    (setq flycheck-ruby-rubocop-executable "~/.rbenv/shims/rubocop")))
 
 ;;;; Add this to run flycheck on every save
 ;;(add-hook 'before-save-hook 'flycheck-list-errors-only-when-errors)
