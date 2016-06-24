@@ -321,4 +321,11 @@
 
 
 (provide 'modes)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; org
+
+(setq org-src-fontify-natively t)
+
+
 ;;; modes ends here
