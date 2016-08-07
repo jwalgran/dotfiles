@@ -328,4 +328,15 @@
 (setq org-src-fontify-natively t)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ctags-update
+
+;; https://github.com/howardabrams/dot-files/blob/265fc9f47a6182894b9af8eabefff9c111bfb4c5/emacs.org
+
+(use-package ctags-update
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook  'turn-on-ctags-auto-update-mode)
+  :diminish ctags-auto-update-mode)
+
+
 ;;; modes ends here
