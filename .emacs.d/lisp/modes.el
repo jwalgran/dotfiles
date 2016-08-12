@@ -339,4 +339,14 @@
   :diminish ctags-auto-update-mode)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; monroe
+
+;; https://github.com/sanel/monroe
+
+(use-package monroe
+  :init
+  (progn
+    (add-hook 'clojure-mode-hook 'clojure-enable-monroe)))
+
+
 ;;; modes ends here
