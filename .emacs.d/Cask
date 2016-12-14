@@ -80,6 +80,7 @@
 (depends-on "maxframe")
 (depends-on "monroe")
 (depends-on "multiple-cursors")
+(depends-on "mustache-mode")
 (depends-on "names")
 (depends-on "nginx-mode")
 (depends-on "omnisharp")
