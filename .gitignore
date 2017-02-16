@@ -13,3 +13,4 @@
 .emacs.d/var
 .emacs.d/bookmarks
 .emacs.d/semanticdb
+.emacs.d/projectile.cache
