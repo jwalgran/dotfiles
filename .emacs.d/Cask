@@ -53,6 +53,7 @@
 (depends-on "helm-ag")
 (depends-on "helm-core")
 (depends-on "helm-dash")
+(depends-on "helm-make")
 (depends-on "helm-projectile")
 (depends-on "helm-swoop")
 (depends-on "highlight")
