@@ -338,4 +338,11 @@
     (add-hook 'clojure-mode-hook 'clojure-enable-monroe)))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; magithub
+
+(use-package magithub
+  :after magit
+  :config (magithub-feature-autoinject t))
+
+
 ;;; modes ends here
