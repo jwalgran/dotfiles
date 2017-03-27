@@ -345,4 +345,13 @@
   :config (magithub-feature-autoinject t))
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; magithub
+
+(use-package smart-mode-line
+  :init
+  (progn
+    (sml/setup)))
+
+
 ;;; modes ends here
