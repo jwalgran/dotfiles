@@ -375,4 +375,12 @@ by using nxml's indentation rules."
         (indent-region begin end))
       (message "Ah, much better!"))))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; intero
+
+(use-package intero
+  :init
+  (progn
+    (add-hook 'haskell-mode-hook 'intero-mode)))
+
 ;;; modes ends here

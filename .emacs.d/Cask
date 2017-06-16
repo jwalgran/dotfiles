@@ -64,6 +64,7 @@
 (depends-on "ido-vertical-mode")
 (depends-on "iedit")
 (depends-on "inflections")
+(depends-on "intero")
 (depends-on "ivy")
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
