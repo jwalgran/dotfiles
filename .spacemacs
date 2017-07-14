@@ -306,7 +306,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default git-magit-status-fullscreen t)
-  (setq magit-repository-directories '("~/Projects/"))
+  (setq magit-repository-directories '("~/Projects/" "~/Code/"))
   )
 
 (defun dotspacemacs/user-config ()
