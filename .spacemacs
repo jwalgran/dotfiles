@@ -40,7 +40,7 @@ values."
      git
      go
      gtags
-     haskell
+     (haskell :variables haskell-process-type 'stack-ghci)
      helm
      html
      javascript
