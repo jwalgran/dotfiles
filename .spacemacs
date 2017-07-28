@@ -41,7 +41,7 @@ values."
      git
      go
      gtags
-     (haskell :variables haskell-process-type 'stack-ghci)
+     (haskell :variables haskell-process-type 'stack-ghci haskell-completion-backend 'intero)
      helm
      html
      javascript
