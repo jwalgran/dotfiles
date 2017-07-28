@@ -35,6 +35,7 @@ values."
      ansible
      auto-completion
      better-defaults
+     csharp
      docker
      emacs-lisp
      git
