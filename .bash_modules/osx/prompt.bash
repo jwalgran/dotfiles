@@ -7,9 +7,9 @@
 # brew install wget
 # brew install git
 # brew update
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-    . /usr/local/etc/bash_completion.d/git-completion.bash;
-    . /usr/local/etc/bash_completion.d/git-prompt.sh;
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+    . $(brew --prefix)/etc/bash_completion.d/git-completion.bash;
+    . $(brew --prefix)/etc/bash_completion.d/git-prompt.sh;
     # PS1='[\h \W$(__git_ps1 " (%s)")]\$ ';
     export PS1='\[\e[32m\]\w\[\e[m\] \[\e[33m\]$(__git_ps1 "(%s)")\[\e[m\]\n\[\e[1;37m\]>\[\e[0m\] ';
 fi

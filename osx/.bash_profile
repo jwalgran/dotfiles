@@ -56,8 +56,8 @@ function console () {
 # brew install wget
 # brew install git
 # brew update
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-  . /usr/local/etc/bash_completion.d/git-completion.bash;
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+    . $(brew --prefix)/etc/bash_completion.d/git-completion.bash;
   PS1='[\h \W$(__git_ps1 " (%s)")]\$ ';
 fi
 
