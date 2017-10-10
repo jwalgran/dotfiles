@@ -51,6 +51,7 @@ values."
      org
      osx
      python
+     react
      restclient
      ruby-on-rails
      scala
