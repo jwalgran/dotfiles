@@ -39,7 +39,7 @@ values."
      csharp
      docker
      emacs-lisp
-     git
+     (git :variables git-link-use-commit 1)
      go
      gtags
      (haskell :variables haskell-process-type 'stack-ghci haskell-completion-backend 'intero)
