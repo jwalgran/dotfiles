@@ -375,6 +375,13 @@ codepoints starting from codepoint-start."
   ;; End ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   )
 
+  ;; Show the full path to the current file in the frame title
+  ;; http://emacsredux.com/blog/2013/04/07/display-visited-files-path-in-the-frame-title/
+  (setq frame-title-format
+        '((:eval (if (buffer-file-name)
+                     (abbreviate-file-name (buffer-file-name))
+                   "%b"))))
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
