@@ -142,8 +142,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -156,7 +156,7 @@ values."
    ;;                             :powerline-scale 1.1)
 
    dotspacemacs-default-font '("Hasklig"
-                               :size 13
+                               :size 23
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
