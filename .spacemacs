@@ -48,7 +48,7 @@ values."
      javascript
      markdown
      nginx
-     org
+     (org :variables org-want-todo-bindings 1)
      osx
      python
      react
