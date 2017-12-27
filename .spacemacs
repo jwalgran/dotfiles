@@ -383,16 +383,6 @@ codepoints starting from codepoint-start."
                      (abbreviate-file-name (buffer-file-name))
                    "%b"))))
 
-  ;; Open Mailplane links
-;; Reference: https://github.com/al3xandru/dotfiles/blame/f5b1edaa0fae57a90aa6bff738f12fc3db54a40f/.spacemacs#L606-L610
-  (defun org-mailplane-open-link (path)
-    "Open a Mailplane url scheme"
-    (let ((escpath (replace-regexp-in-string " " "%20" path)))
-      (message "Open Mailplane link: mailplane:%s" escpath)
-      (shell-command (concat "open \"mailplane:" escpath "\""))))
-
-  (org-add-link-type "mailplane" #'org-mailplane-open-link)
-
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
