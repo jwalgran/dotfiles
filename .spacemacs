@@ -158,7 +158,7 @@ values."
    ;;                             :powerline-scale 1.1)
 
    dotspacemacs-default-font '("Hasklig"
-                               :size 23
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
