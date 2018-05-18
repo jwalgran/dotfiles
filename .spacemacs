@@ -378,6 +378,11 @@ codepoints starting from codepoint-start."
   ;; End ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   )
 
+  ;; Enable auto-fill by default, set to 78 characters
+  (add-hook 'prog-mode-hook #'auto-fill-mode)
+  (add-hook 'text-mode-hook #'auto-fill-mode)
+  (setq fill-column 78)
+
   ;; Show the full path to the current file in the frame title
   ;; http://emacsredux.com/blog/2013/04/07/display-visited-files-path-in-the-frame-title/
   (setq frame-title-format
