@@ -375,6 +375,8 @@ codepoints starting from codepoint-start."
     (prettify-symbols-mode))
 
   (add-hook 'haskell-mode-hook 'my-set-hasklig-ligatures)
+  (add-hook 'scala-mode-hook 'my-set-hasklig-ligatures)
+  (add-hook 'js2-mode-hook 'my-set-hasklig-ligatures)
   ;; End ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   )
 
