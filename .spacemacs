@@ -328,6 +328,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default git-magit-status-fullscreen t)
   (setq magit-repository-directories '("~/Projects/" "~/Code/"))
+  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+  (setq exec-path (append exec-path '("/usr/local/bin")))
   )
 
 (defun dotspacemacs/user-config ()
