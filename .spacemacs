@@ -38,6 +38,7 @@ values."
      better-defaults
      csharp
      docker
+     elm
      emacs-lisp
      (git :variables git-link-use-commit 1)
      go
@@ -377,6 +378,7 @@ codepoints starting from codepoint-start."
   (add-hook 'haskell-mode-hook 'my-set-hasklig-ligatures)
   (add-hook 'scala-mode-hook 'my-set-hasklig-ligatures)
   (add-hook 'js2-mode-hook 'my-set-hasklig-ligatures)
+  (add-hook 'elm-mode-hook 'my-set-hasklig-ligatures)
   ;; End ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   )
 
