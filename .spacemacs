@@ -40,7 +40,7 @@ values."
      docker
      elm
      emacs-lisp
-     (git :variables git-link-use-commit 1)
+     (git :variables git-link-use-commit 1 with-editor-emacsclient-executable "/usr/local/bin/emacsclient")
      go
      gtags
      (haskell :variables haskell-process-type 'stack-ghci haskell-completion-backend 'intero)
