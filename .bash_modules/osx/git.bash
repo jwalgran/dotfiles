@@ -6,5 +6,3 @@ if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; 
   . /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh;
   PS1='[\h \W$(__git_ps1 " (%s)")]\$ ';
 fi
-
-git config --global gpg.program $(which gpg)
