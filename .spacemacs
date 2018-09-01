@@ -396,6 +396,8 @@ codepoints starting from codepoint-start."
                      (abbreviate-file-name (buffer-file-name))
                    "%b"))))
 
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
