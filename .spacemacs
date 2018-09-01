@@ -398,6 +398,15 @@ codepoints starting from codepoint-start."
 
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
+  (defun markdown-preview-file ()
+    "run Marked on the current file and revert the buffer"
+    (interactive)
+    (shell-command
+    (format "open -a \"/Applications/Marked 2.app\" %s"
+            (shell-quote-argument (buffer-file-name)))))
+
+  (spacemacs/set-leader-keys "om" 'markdown-preview-file)
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
