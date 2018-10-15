@@ -328,6 +328,8 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+
+   dotspacemacs-frame-title-format "%f"
    ))
 
 (defun dotspacemacs/user-init ()
@@ -399,13 +401,6 @@ codepoints starting from codepoint-start."
   (add-hook 'prog-mode-hook #'auto-fill-mode)
   (add-hook 'text-mode-hook #'auto-fill-mode)
   (setq fill-column 78)
-
-  ;; Show the full path to the current file in the frame title
-  ;; http://emacsredux.com/blog/2013/04/07/display-visited-files-path-in-the-frame-title/
-  (setq frame-title-format
-        '((:eval (if (buffer-file-name)
-                     (abbreviate-file-name (buffer-file-name))
-                   "%b"))))
 
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
