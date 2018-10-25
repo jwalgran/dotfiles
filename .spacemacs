@@ -416,6 +416,20 @@ codepoints starting from codepoint-start."
 
   (spacemacs/set-leader-keys "om" 'markdown-preview-file)
 
+  ;; Date stamping
+  (defun now ()
+    "Insert string for the current time formatted like '2:34 PM'."
+    (interactive)                 ; permit invocation in minibuffer
+    (insert (format-time-string "%D %-I:%M %p")))
+  (spacemacs/set-leader-keys "on" 'now)
+
+  (defun today ()
+    "Insert string for today's date nicely formatted in American style,
+  e.g. Sunday, September 17, 2000."
+    (interactive)                 ; permit invocation in minibuffer
+    (insert (format-time-string "%A %Y-%m-%d")))
+  (spacemacs/set-leader-keys "ot" 'today)
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
