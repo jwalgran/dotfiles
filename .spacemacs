@@ -397,6 +397,9 @@ codepoints starting from codepoint-start."
   ;; End ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   )
 
+  ;; Emoji on macOS
+  (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
+
   ;; Enable auto-fill by default, set to 78 characters
   (add-hook 'prog-mode-hook #'auto-fill-mode)
   (add-hook 'text-mode-hook #'auto-fill-mode)
