@@ -430,6 +430,17 @@ codepoints starting from codepoint-start."
     (insert (format-time-string "%A %Y-%m-%d")))
   (spacemacs/set-leader-keys "ot" 'today)
 
+
+  ;; Remove curly quotes https://superuser.com/a/604264
+  (defun replace-smart-quotes (beg end)
+    "Replace 'smart quotes' in buffer or region with ascii quotes."
+    (interactive "r")
+    (format-replace-strings '(("\x201C" . "\"")
+                              ("\x201D" . "\"")
+                              ("\x2018" . "'")
+                              ("\x2019" . "'"))
+                            nil beg end))
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
