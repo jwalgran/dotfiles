@@ -359,6 +359,9 @@ you should place your code here."
   (setq projectile-switch-project-action 'projectile-vc)
   (setq org-agenda-files (list "~/Dropbox/Azavea/beta-notebook.org"))
 
+  ;; The default of 0.5 is too slow for my taste
+  (setq avy-timeout-seconds 0.2)
+
   ;; Begin ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   (defun my-correct-symbol-bounds (pretty-alist)
     "Prepend a TAB character to each symbol in this alist,
