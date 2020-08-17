@@ -437,6 +437,10 @@ codepoints starting from codepoint-start."
   (spacemacs/set-leader-keys "ot" 'today)
 
 
+  ;; Patch a bug in exiting iedit https://github.com/syl20bnr/spacemacs/issues/13849
+  (with-eval-after-load 'evil-iedit-state
+    (fset 'iedit-cleanup 'iedit-lib-cleanup))
+
   ;; Remove curly quotes https://superuser.com/a/604264
   (defun replace-smart-quotes (beg end)
     "Replace 'smart quotes' in buffer or region with ascii quotes."
