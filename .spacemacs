@@ -362,6 +362,9 @@ you should place your code here."
   ;; The default of 0.5 is too slow for my taste
   (setq avy-timeout-seconds 0.2)
 
+  (setq python-shell-interpreter "/Users/jwalgran/.pyenv/shims/python")
+  (setq live-py-version "python3")
+
   ;; Begin ligature code from https://github.com/Profpatsch/blog/blob/master/posts/ligature-emulation-in-emacs/post.md
   (defun my-correct-symbol-bounds (pretty-alist)
     "Prepend a TAB character to each symbol in this alist,
