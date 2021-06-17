@@ -229,7 +229,8 @@ values."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   ;; PREVIOUS VALUE ;; dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location nil
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
@@ -348,6 +349,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq magit-repository-directories '("~/Projects/" "~/Code/"))
   (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
   (setq exec-path (append exec-path '("/usr/local/bin")))
+  (setq create-lockfiles nil)
   )
 
 (defun dotspacemacs/user-config ()
